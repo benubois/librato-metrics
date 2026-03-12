@@ -39,7 +39,7 @@ module Librato
       #
       # @return [String] api_endpoint
       def api_endpoint
-        @api_endpoint ||= 'https://metrics-api.librato.com'
+        @api_endpoint ||= ENV.fetch('LIBRATO_API_ENDPOINT', 'http://localhost:3000')
       end
 
       # Set API endpoint for use with queries and direct

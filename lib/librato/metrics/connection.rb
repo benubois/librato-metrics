@@ -10,7 +10,7 @@ module Librato
     class Connection
       extend Forwardable
 
-      DEFAULT_API_ENDPOINT = 'https://metrics-api.librato.com'
+      DEFAULT_API_ENDPOINT = ENV.fetch('LIBRATO_API_ENDPOINT', 'http://localhost:3000')
 
       def_delegators :transport, :get, :post, :head, :put, :delete,
                                  :build_url
